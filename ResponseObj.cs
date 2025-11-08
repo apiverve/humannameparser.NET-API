@@ -4,52 +4,55 @@ using Newtonsoft.Json;
 
 namespace APIVerve
 {
-public class parsed
-{
-    [JsonProperty("title")]
-    public string title { get; set; }
+    /// <summary>
+    /// Parsed data
+    /// </summary>
+    public class Parsed
+    {
+        [JsonProperty("title")]
+        public string Title { get; set; }
 
-    [JsonProperty("first")]
-    public string first { get; set; }
+        [JsonProperty("first")]
+        public string First { get; set; }
 
-    [JsonProperty("middle")]
-    public string middle { get; set; }
+        [JsonProperty("middle")]
+        public string Middle { get; set; }
 
-    [JsonProperty("last")]
-    public string last { get; set; }
+        [JsonProperty("last")]
+        public string Last { get; set; }
 
-    [JsonProperty("nick")]
-    public string nick { get; set; }
+        [JsonProperty("nick")]
+        public string Nick { get; set; }
 
-    [JsonProperty("suffix")]
-    public string suffix { get; set; }
+        [JsonProperty("suffix")]
+        public string Suffix { get; set; }
 
-}
+    }
+    /// <summary>
+    /// Data data
+    /// </summary>
+    public class Data
+    {
+        [JsonProperty("name")]
+        public string Name { get; set; }
 
-public class data
-{
-    [JsonProperty("name")]
-    public string name { get; set; }
+        [JsonProperty("parsed")]
+        public Parsed Parsed { get; set; }
 
-    [JsonProperty("parsed")]
-    public parsed parsed { get; set; }
+    }
+    /// <summary>
+    /// API Response object
+    /// </summary>
+    public class ResponseObj
+    {
+        [JsonProperty("status")]
+        public string Status { get; set; }
 
-}
+        [JsonProperty("error")]
+        public object Error { get; set; }
 
-public class ResponseObj
-{
-    [JsonProperty("status")]
-    public string status { get; set; }
+        [JsonProperty("data")]
+        public Data Data { get; set; }
 
-    [JsonProperty("error")]
-    public object error { get; set; }
-
-    [JsonProperty("data")]
-    public data data { get; set; }
-
-    [JsonProperty("code")]
-    public int code { get; set; }
-
-}
-
+    }
 }
